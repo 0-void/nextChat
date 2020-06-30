@@ -23,6 +23,17 @@ export default function SendMessage({ onClick, onTyping }) {
       <style jsx>
         {`
           .container {
+            justify-self: flex-end;
+          }
+        `}
+      </style>
+    </div>
+  );
+}
+/*
+      <style jsx>
+        {`
+          .container {
             position: absolute;
             width: 100%;
             height: 2.8rem;
@@ -58,7 +69,4 @@ export default function SendMessage({ onClick, onTyping }) {
             outline: none;
           }
         `}
-      </style>
-    </div>
-  );
-}
+      </style>*/

@@ -1,16 +1,16 @@
 export default function Avatar({ username }) {
   return (
     <div className="avatar">
-      {!username ? "!" : username[0]}
-
+      {username}
       <style jsx>
         {`
           .avatar {
-            border-radius: 50%;
-            width: 2.9rem;
-            background: black;
-            height: 2.9rem;
+            font-family: inherit;
+            border-radius: 62px;
+            letter-spacing: 0.5px;
+            background: #e91e63;
             color: white;
+            padding: 0.4rem 1.4rem;
             text-transform: uppercase;
             display: flex;
             align-items: center;
@@ -21,3 +21,4 @@ export default function Avatar({ username }) {
     </div>
   );
 }
+//{!username ? "!" : username[0]}

@@ -116,25 +116,34 @@ export default function JoinChat() {
           socketId={getSocket}
         />
       </main>
-      <style jsx>
-        {`
-          .background {
-            background: linear-gradient(
-              146deg,
-              rgba(34, 193, 195, 1) 0%,
-              rgba(253, 167, 45, 1) 100%
-            );
-            position: fixed;
-            top: 0;
-            left: 0;
-            min-width: 100%;
-            min-height: 100vh;
-            z-index: -1;
+      <style jsx>{`
+          .container {
+            width : 100%;
+            display : flex;
+            height: 100vh;
           }
+        @media (min-width : 540){
+        .background {
+          background: linear-gradient(
+            146deg,
+            rgba(34, 193, 195, 1) 0%,
+            rgba(253, 167, 45, 1) 100%
+          );
+          position: fixed;
+          top: 0;
+          left: 0;
+          min-width: 100%;
+          min-height: 100vh;
+          z-index: -1;
+        }
+      `}</style>
+    </div>
+  );
+}
+/*
+        {`
           @media (max-width: 540px) {
             .container {
-              min-width: 100vh;
-              height: 90vh;
             }
             main {
               width: 100%;
@@ -148,10 +157,7 @@ export default function JoinChat() {
             }
           }
         `}
-      </style>
-    </div>
-  );
-}
+        */
 //        <button onClick={connectionHandler}>
 ////////         {status ? "disconnect" : "connect"}
 //      </button>

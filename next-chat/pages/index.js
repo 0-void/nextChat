@@ -31,90 +31,52 @@ export default function Home() {
           </Link>
         </div>
       </main>
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          flex-direction: column;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        main {
-          flex: 1;
-          flex-direction: column;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .title {
-          font-size: 3rem;
-        }
-        .title span {
-          color: #0070f3;
-        }
-        .link {
-          border-radius: 3px;
-          display: inline-block;
-          border: none;
-          font-size: 1.3rem;
-          height: 3.8rem;
-          width: 9rem;
-          background: #e91e63;
-          text-decoration: none;
-          vertical-align: middle;
-          color: white;
-          padding: 1.2rem;
-          text-align: center;
-          letter-spacing: 2px;
-        }
-        .join-container {
-          display: flex;
-          align-items: center;
-          justify-content: cente;
-        }
-        .join-container input {
-          font-size: 1.3rem;
-          margin: 0 1.7rem;
-          height: 3.8rem;
-          width: 14rem;
-          padding: 1.2rem;
-        }
-        @media (max-width: 540px) {
-          .containter {
-            width: 100vh;
+      <style jsx>
+        {`
+          .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .container h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            margin: 0 auto;
           }
           .join-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            margin-top: 2rem;
+          }
+          .title span {
+            color: #0070f3;
           }
           .join-container input {
-            margin: 1.8 0rem;
-            height: 3.1rem;
-            width: 13rem;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
           }
           .link {
-            margin-top: 0.8rem;
-            height: 3.1rem;
-            line-height: 0.5;
-            width: 9rem;
+            text-decoration: none;
+            color: white;
+            background: #e91e63;
+            padding: 1rem 1.5rem;
+            letter-spacing: 1.8px;
+            border-radius: 4px;
+            margin: 1rem;
           }
-
-          .title {
-            font-size: 1.7rem;
-          }
-        }
-      `}</style>
-      <style jsx global>
-        {`
-          html,
-          body {
-            margin: 0;
-            padding: 0;
-          }
-          * {
-            box-sizing: border-box;
+          @media (min-width: 540px) {
+            .join-container {
+              flex-direction: row;
+              justify-content: center;
+            }
+            .link {
+              padding: 0.9rem 1.5rem;
+            }
           }
         `}
       </style>

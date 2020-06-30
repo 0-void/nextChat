@@ -13,7 +13,7 @@ export default function ChatWindow({
 }) {
   return (
     <div className="container">
-      <ChatHeader title={username} members={members} />
+      <ChatHeader title={username} members={members} typing={typing} />
       <div className="message-body">
         <ul className="message-list">
           {messages.map((message) => {
@@ -33,17 +33,30 @@ export default function ChatWindow({
             );
           })}
         </ul>
-        {typing.isTyping && (
-          <div className="typing">
-            <b>{typing.username}</b> is typing...
-          </div>
-        )}
         <SendMessage
           onTyping={onTyping}
           onClick={messageData}
           className="send-message"
         />
       </div>
+      <style jsx>{`
+        .message-body {
+          height: 100%;
+          width: 100%;
+          font-family: inherit;
+        }
+        .message-list {
+          display: flex;
+          flex-direction: column;
+          margin: 0;
+          padding: 0;
+        }
+      `}</style>
+    </div>
+  );
+}
+/*
+
       <style jsx>
         {`
           .container {
@@ -78,14 +91,6 @@ export default function ChatWindow({
           .message-list li {
             justify-self: flex-end;
           }
-          .typing {
-            position: absolute;
-            bottom: 7rem;
-            left: 40%;
-            border-radius: 3px;
-            padding: 0.4rem 0.8rem;
-            box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.2);
-          }
           @media (max-width: 540px) {
             .container {
               max-width: 100vh;
@@ -97,6 +102,4 @@ export default function ChatWindow({
           }
         `}
       </style>
-    </div>
-  );
-}
+    */
