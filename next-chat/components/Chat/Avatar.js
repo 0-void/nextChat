@@ -1,7 +1,8 @@
 export default function Avatar({ username }) {
   return (
     <div className="avatar">
-      {username[0]}
+      {!username ? "!" : username[0]}
+
       <style jsx>
         {`
           .avatar {
