@@ -1,61 +1,68 @@
+import Avatar from "./Avatar";
+
 export default function Message({ content, type, time }) {
   return (
-    <li
-      className={`container ${type}
+    <div className={`message-container ${type}`}>
+      {type !== "self" && type !== "connection" && (
+        <Avatar type="message" username="H" />
+      )}
+      <li
+        className={`container ${type === "connection" && "connection"}
        `}
-    >
-      <p className="message-content">{content}</p>
-      {type !== "connection" && <time className="message-time">{time}</time>}
+      >
+        <div className="message-content">{content}</div>
+        {type !== "connection" && <time className="message-time">{time}</time>}
+      </li>
       <style jsx>
         {`
-          .container {
-            position: relative;
-            bottom: 0;
-            left: 0;
-          }
-        `}
-      </style>
-    </li>
-  );
-}
-/*      <style jsx>
-        {`
-          .container {
-            box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
-            padding: 0.4rem 0.7rem;
-            border-radius: 4px;
-            margin: 0.3rem 0;
-            min-width: 9rem;
+          .message-container {
             display: flex;
-            flex-direction: column;
-            font-size: 1.2rem;
+            align-items: center;
+            justify-content: center;
+          }
+          .container {
             list-style: none;
-          }
-          .message-content {
-            width: 80%;
-            border: none;
-            padding: 0;
-            margin: 0;
-          }
-          .message-time {
-            font-size: 0.59rem;
-            align-self: flex-end;
+            box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+            margin: 0.3rem 0.3rem;
+            background: white;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.2rem 0.4rem;
           }
           .connection {
-            min-width: 100%;
-            justify-content: center;
+            background: none;
+          }
+          .container div {
+            font-size: 0.9rem;
+            margin: 0;
+          }
+
+          .message-time {
+            align-self: flex-end;
+            margin: 0 0.3rem;
+            color: #ccc;
+            font-size: 0.51rem;
+          }
+          .connection {
+            align-self: center;
+            color: #ccc;
             box-shadow: none;
-            color: grey;
+            background: none;
           }
           .self {
-            justify-self: flex-end;
+            align-self: flex-end;
           }
           .align-self_left {
             align-self: flex-start;
           }
         `}
       </style>
-      */
+    </div>
+  );
+}
+/*
+ */
 
 /*
       <style jsx>
@@ -74,14 +81,6 @@ export default function Message({ content, type, time }) {
             right: 0.3rem;
             font-size: 0.6rem;
           }
-          .self {
-            align-self: flex-end;
-          }
-          .align-self_left {
-            align-self: flex-start;
-          }
-          .connection {
-            align-self: center;
           }
           .center-text {
             color: #ccc;

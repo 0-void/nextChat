@@ -5,7 +5,11 @@ export const useSocket = (socketUrl) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    setSocket(io(socketUrl, {}));
+    setSocket(
+      io(socketUrl, {
+        forceNew: true,
+      })
+    );
     return () => {
       if (socket) socket.disconnect();
     };

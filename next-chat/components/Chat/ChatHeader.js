@@ -4,7 +4,7 @@ export default function ChatHeader({ title, typing, members }) {
   return (
     <div className="container">
       <div className="title">
-        <Avatar username={title} />
+        <Avatar type="username" username={title} />
         <div className="online">
           {members.length - 1 !== 0 ? members.length : 0}
         </div>

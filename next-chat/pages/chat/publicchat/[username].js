@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import StatusBar from "../../../components/StatusBar";
+import ChatHeader from "../../../components/Chat/ChatHeader";
 import { useSocket } from "../../../lib/useSocket";
 import ChatWindow from "../../../components/Chat/ChatWindow";
 
@@ -99,13 +100,14 @@ export default function JoinChat() {
 
   return (
     <div className="container">
-      <div className="background" />
       <Head>
         <title>Chat Room</title>
         <link rel="icon" href="../../favicon.ico" />
       </Head>
+      <div className="background" />
+      <StatusBar time={date} status={status} />
+      <ChatHeader title={username} members={members} typing={typing} />
       <main>
-        <StatusBar time={date} status={status} />
         <ChatWindow
           onTyping={onTyping}
           username={username}
@@ -117,48 +119,36 @@ export default function JoinChat() {
         />
       </main>
       <style jsx>{`
-          .container {
-            width : 100%;
-            display : flex;
-            height: 100vh;
+        .container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+          width: 100%;
+        }
+        main {
+          width: 100%;
+          height: 100%;
+        }
+        @media (min-width: 540px) {
+          .background {
+            background: linear-gradient(
+              146deg,
+              rgba(34, 193, 195, 1) 0%,
+              rgba(253, 167, 45, 1) 100%
+            );
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100vh;
+            z-index: -1;
           }
-        @media (min-width : 540){
-        .background {
-          background: linear-gradient(
-            146deg,
-            rgba(34, 193, 195, 1) 0%,
-            rgba(253, 167, 45, 1) 100%
-          );
-          position: fixed;
-          top: 0;
-          left: 0;
-          min-width: 100%;
-          min-height: 100vh;
-          z-index: -1;
+          .container {
+            width: 60vh;
+          }
         }
       `}</style>
     </div>
   );
 }
-/*
-        {`
-          @media (max-width: 540px) {
-            .container {
-            }
-            main {
-              width: 100%;
-              height: 100%;
-            }
-          }
-          @media (min-width: 560px) {
-            .container {
-              display: flex;
-              justify-content: center;
-            }
-          }
-        `}
-        */
-//        <button onClick={connectionHandler}>
-////////         {status ? "disconnect" : "connect"}
-//      </button>
-//     <button onClick={() => setMessages([])}>clear message</button>

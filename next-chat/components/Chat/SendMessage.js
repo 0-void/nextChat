@@ -23,40 +23,30 @@ export default function SendMessage({ onClick, onTyping }) {
       <style jsx>
         {`
           .container {
-            justify-self: flex-end;
-          }
-        `}
-      </style>
-    </div>
-  );
-}
-/*
-      <style jsx>
-        {`
-          .container {
-            position: absolute;
-            width: 100%;
-            height: 2.8rem;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: space-around;
-            bottom: 0.3rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 0.1rem;
+            height: 3rem;
           }
           .container input {
-            width: 73%;
+            width: 69%;
+            padding: 0.5rem;
+            border: 1px solid white;
             border-radius: 4px;
-            outline: none;
-            border: 1px solid #ccc;
             height: 100%;
-            padding: 0 0.7rem;
           }
           .container button {
             border-radius: 4px;
             color: white;
-            border: none;
             height: 100%;
-            width: 20%;
-            background: #0070f3;
+            background: #e91e63;
+            border: none;
+            width: 30%;
+            outline: none;
           }
           .container button::-moz-focus-inner {
             border: none;
@@ -69,4 +59,7 @@ export default function SendMessage({ onClick, onTyping }) {
             outline: none;
           }
         `}
-      </style>*/
+      </style>
+    </div>
+  );
+}
