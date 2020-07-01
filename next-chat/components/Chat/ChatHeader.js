@@ -48,24 +48,3 @@ export default function ChatHeader({ title, typing, members }) {
   );
 }
 
-/*
-      <style jsx>
-        {`
-          .title {
-            text-transform: capitalize;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 0.4rem 0.9rem;
-            font-size: 1.9rem;
-            width: 100%;
-            height: 4rem;
-            background: #e91e63;
-            color: white;
-          }
-          .title div {
-            margin-left: 1rem;
-          }
-        `}
-      </style>
-*/

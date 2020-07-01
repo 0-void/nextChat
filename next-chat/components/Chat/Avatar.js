@@ -28,4 +28,3 @@ export default function Avatar({ username, type }) {
     </div>
   );
 }
-//{!username ? "!" : username[0]}

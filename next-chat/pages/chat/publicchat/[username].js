@@ -54,7 +54,7 @@ export default function JoinChat() {
     if (typing.isTyping) {
       timeInterval = setInterval(() => {
         setTyping({ isTyping: false, username: "" });
-      }, 5000);
+      }, 2000);
     }
     return () => clearTimeout(timeInterval);
   }, [typing]);
@@ -143,9 +143,6 @@ export default function JoinChat() {
             min-width: 100%;
             min-height: 100vh;
             z-index: -1;
-          }
-          .container {
-            width: 60vh;
           }
         }
       `}</style>
