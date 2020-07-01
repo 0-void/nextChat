@@ -1,8 +1,4 @@
-const users = [];
-module.exports = (io) => {
-  setInterval(() => {
-    console.log(users);
-  }, 5000);
+module.exports = (io, users) => {
   io.on("connection", (socket) => {
     let found = false;
     if (users.length !== 0)
@@ -29,6 +25,7 @@ module.exports = (io) => {
     });
 
     socket.on("disconnect", () => {
+      if (users.length === 0) return;
       if (!users.filter((user) => user.socketId === socket.id)[0].username)
         return;
       console.log(
@@ -56,7 +53,6 @@ module.exports = (io) => {
     io.emit("members", users);
 
     socket.on("typing", (username) => {
-      console.log(username, "typing");
       socket.broadcast.emit("typing", {
         username,
         isTyping: true,
